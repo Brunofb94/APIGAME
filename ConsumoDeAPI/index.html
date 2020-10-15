@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Games's Store</title>
+</head>
+
+<body>
+    <div>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark" id="ttt">
+            <a href="#"><img src="./img/captain (2).png" alt="logo-captain"> </a>
+            <h2 style="color: #ed145b;">API OF GAMES</h2>
+            <p style="color: rgb(155, 145, 145);">*</p>
+
+            <ul class="navbar-nav">
+                <a class="nav-item"> <button class="btn btn-secondary btn-lg dropdown-toggle " id="Mod"
+                        style="margin-left: 0%">
+                        Create</button></a>
+            </ul>
+
+        </nav>
+    </div>
+    <!-- login for autentication but with error in load form
+    <div class="container">
+        <input type="text" class="form-control" name="email" id="email">
+        <input type="text" class="form-control" name="pwd" id="pwd">
+
+        <button class="btn" onclick="login()"> Sign in</button>
+    </div>-->
+    <div class="container">
+    </div>
+    <div class="container" style="display: NONE;" id="alone" style="position: fixed;">
+        <hr>
+        <div class="alert alert-success alert-dismissible" style="display: none;" id="testando">
+            <a href="creats"> <button type="button" class="close" data-dismiss="alert">&times;</button></a>
+            <strong>Success!</strong> Game created.
+        </div>
+        <hr>
+        <div class="container p-3 my-3 bg-dark text-white" id="creats">
+            <div class="card-header">
+                <h4>Create a new Game</h4>
+            </div>
+            <div class="form-group">
+                <form action="/game" method="POST">
+                    <label for="title">Title</label><br>
+                    <input type="hidden" name="id" id="id" placeholder="id">
+                    <input type="text" name="title" id="title" placeholder="Insert a new title" class="form-control">
+                    <br>
+                    <label for="price">Price</label> <br>
+                    <input type="number" name="price" id="price" placeholder="insert a new value"
+                        class="form-control"><br>
+                    <label for="year">Year</label> <br>
+                    <input type="text" name="year" id="year" class="form-control"> <br>
+                    <br>
+                    <button type="button" onclick="createGame()" class="btn btn-primary"> Okay</button>
+                    <button type="button" class="btn btn-danger" id="modal-closed">Close</button>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+            </div>
+
+        </div>
+    </div>
+    <!--<div class="container">
+        <table class="table" id="tt">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Price</th>
+                    <th>Year</th>
+                    <td>Edit</td>
+                    <td>Delete</td>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table> -->
+    </div>
+
+    <div class="container mt-3">
+        <h2>Filter List</h2>
+        <p>Type something in the input field to search the list for specific items:</p>
+        <input class="form-control" id="myInput" type="text" placeholder="Search.." onkeyup="filterFunction()">
+        <br>
+    </div>
+    <div class="container">
+        <hr>
+        <div class="card bg-dark text-white">
+            <div class="card-body">List's Games</div>
+        </div>
+        <div class="container p-3 my-3 bg-dark text-white" id="lops" style="display: none;">
+            <hr>
+            <div class="card-header">
+                <h4>Edit a Game</h4>
+            </div>
+            <div class="form-group">
+                <label for="id">ID:</label> <br>
+                <input type="text" name="idEdit" id="idEdit" placeholder="ID" readonly> <br>
+                <label for="titleEdit">Title</label><br>
+                <input type="text" name="titleEdit" id="titleEdit" placeholder="Insert a new title"
+                    class="form-control">
+                <br>
+                <label for="priceEdit">Price</label> <br>
+                <input type="number" name="priceEdit" id="priceEdit" placeholder="insert a new value"
+                    class="form-control"><br>
+                <label for="yearEdit">Year</label> <br>
+                <input type="text" name="yearEdit" id="yearEdit"> <br>
+                <br>
+                <button type="button" onclick="updateGame()" class="btn btn-primary"> Update</button>
+                <button type="button" class="btn btn-danger" id="modal-closed-edit">Close</button>
+
+            </div>
+        </div>
+        <ul id="games" class="list-inline list-group-flush"></ul>
+        <hr>
+        <a href="#ttt"><img src="./img/thanos.png" alt="thanos-back"></a>
+
+    </div>
+    <hr>
+    </div>
+    <hr>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/filter.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+</body>
+
+</html>
